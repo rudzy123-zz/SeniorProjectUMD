@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nav_drawer"
+    tools:context="com.example.cs4531.interviewapp.ViewBank">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ViewBank">
+
+        <Button
+            android:id="@+id/viewBanks"
+            android:layout_height="wrap_content"
+            android:layout_width="256dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorMaroon"
+            android:fontFamily="@font/textbook"
+            android:onClick="viewBankList"
+            android:padding="8dp"
+            android:text="@string/viewBanks"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/newBank"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:background="@color/colorMaroon"
+            android:fontFamily="@font/textbook"
+            android:onClick="addBank"
+            android:padding="8dp"
+            android:text="@string/newBank"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewBanks" />
+
+        <Button
+            android:id="@+id/delBank"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorMaroon"
+            android:fontFamily="@font/textbook"
+            android:onClick="delBank"
+            android:padding="8dp"
+            android:text="@string/deleteBank"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/newBank" />
+
+        <Button
+            android:id="@+id/addQuestionToBank"
+            android:layout_width="256dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorMaroon"
+            android:fontFamily="@font/textbook"
+            android:onClick="addQToBank"
+            android:padding="8dp"
+            android:text="@string/addQuestionToBank"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/delBank" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorMaroon"
+        app:menu="@menu/nav_menu"
+        app:itemTextColor="@color/colorWhite"
+        app:theme="@style/NavigationDrawerStyle">
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>

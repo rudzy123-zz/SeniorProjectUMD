@@ -1,0 +1,4 @@
+#ignore individual routing files
+/test/*
+packagelock.json
+/node_modules/bson/*

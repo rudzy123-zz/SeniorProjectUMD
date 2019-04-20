@@ -1,0 +1,93 @@
+doctype html
+html
+        head
+                title Database
+        body
+                h1 Edit the Database
+                - var values = [names]
+                - var len = 0;
+                table
+                        tr
+                                th(style={border: '2px solid black', padding: '10px'})
+                                        h3 Add Question to a Bank
+                                        table(align="center", style={padding:'10px'})
+                                                td
+                                                        form(action='/createFlash', method='POST')
+                                                                table(align='center')
+                                                                        tr
+                                                                                th Bank
+                                                                                th Question
+                                                                                th Answer
+                                                                        tr
+                                                                                td
+                                                                                        select(name='bank', required)
+                                                                                                - for(var len = 0; len < names.length; len++)
+                                                                                                        option= names.slice(len, len+1)
+                                                                                td
+                                                                                        textarea(rows='4', cols='50',name='question', required)
+                                                                                td
+                                                                                        textarea(rows='4', cols='50',name='answer', required)
+                                                                input(type='submit' value='Submit')
+
+                                th
+                                th
+                                th(style={border: '2px solid black', padding: '10px'})
+                                        h3 Add a New Bank
+                                        table(align="center", style={padding:'10px'})
+                                                td
+                                                        form(action='/createBankonline', method='POST')
+                                                                table(align="center")
+                                                                        tr
+                                                                                th New Bank Name
+                                                                        tr
+                                                                                td
+                                                                                        textarea(rows='3', cols='25',name='bankName', required)
+                                                                input(type='submit' value='Submit')
+                        tr
+                        tr
+                        tr
+                                th(style={border: '2px solid black', padding: '10px'})
+                                        h3 Delete Question in a Bank
+                                        table(align="center", style={padding:'10px'})
+                                                td
+                                                        form(action='/getOnlineQuestions', method='POST')
+                                                                table(align="center", style={padding:'10px'})
+                                                                        tr
+                                                                                th Bank
+                                                                        tr
+                                                                                td
+                                                                                        select(name='bank', required)
+                                                                                                - for(var len = 0; len < names.length; len++)
+                                                                                                        option= names.slice(len, len+1)
+                                                                input(type='submit' value='Get Questions')
+                                                td
+                                                        form(action='/deleteQuestion', method='POST')
+                                                                input(type='hidden' name='bank' value=bank)
+                                                                table(align="center", style={padding: '10px'})
+                                                                        tr
+                                                                                th Questions
+                                                                        tr
+                                                                                td
+                                                                                        select(name='question', required)
+                                                                                                - for(var len = 0; len < questions.length; len++)
+                                                                                                        option= questions.slice(len, len+1)
+                                                                input(type='submit' value='Submit')
+                                th
+                                th
+                                th(style={border: '2px solid black', padding: '10px'})
+                                        h3 Delete a Bank
+                                        table(align="center", style={padding:'10px'})
+                                                td
+                                                        form(action='/deleteBank', method='POST')
+                                                                table(align="center", style={padding:'10px'})
+                                                                        tr
+                                                                                th Bank Name
+                                                                        tr
+                                                                                td
+                                                                                        select(name='bankName', required)
+                                                                                                - for(var len = 0; len < names.length; len++)
+                                                                                                        option= names.slice(len, len+1)
+                                                                input(type='submit' value='Submit')
+
+p
+        a(class='button' href='/logout') Logout
